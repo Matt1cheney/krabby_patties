@@ -1,0 +1,18 @@
+.title {
+  
+}
+
+.toBeEaten {
+  border-style:solid;
+  border: solid;
+  border-color: black;
+  height: 60vh;
+
+}
+.eaten {
+  border-style:solid;
+  border: solid;
+  border-color: black;
+  height: 60vh;
+
+}

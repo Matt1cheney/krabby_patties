@@ -1,16 +1,15 @@
 $(document).ready(() => {
   // creating a reference to burger input.
-  let id = $(this).data("id");
 
-  $(".eatMe").on("click", function(event) {
 
+  $(".change-eaten").on("click", function(event) {
     let burgerEaten = {
-      eaten: hasBeenEaten
+      eaten: $(this).attr("data-burgerEaten")
     };
-
-    $.ajax(`/burger${id}`, {
-      type: "POST",
-      data: eaten
+    let id = $(this).attr("data-id");
+    $.ajax(`/api/burger/${id}`, {
+      type: "PUT",
+      data: burgerEaten
     }).then(() => {
       console.log("this burger was eaten", burgerEaten);
 
@@ -18,13 +17,12 @@ $(document).ready(() => {
     });
   });
 
-  $(".create-form").on("click", (event) => {
+  $(".burgerBtn").on("click", (event) => {
     const newBurgerReq = {
-      burger_name: $(".burgerReq").val(),
-      eaten: false
+      burger_name: $("#burgerReq").val().trim(),
     };
-
-    $.ajax("/burger", {
+console.log(newBurgerReq)
+    $.ajax("/api/burger", {
       type: "POST",
       data: newBurgerReq
     }).then(() => {
@@ -33,13 +31,16 @@ $(document).ready(() => {
       location.reload();
     });
   });
+
   $(".delete-burger").on("click", function(event) {
-    $.ajax(`/burger${id}`, {
-      type: "DESTROY"
+    let id = $(this).attr("data-id");
+    $.ajax( {
+      method: "DELETE",
+      url: `/api/Burger/${id}`
     }).then(function() {
-      console.log("we will not proceed with the order..", id)
-    })
-  })
+      console.log("we will not proceed with the order..", id);
+    });
+  });
 });
 
 //   const $newBurgerInput = $("input.burgerReq");

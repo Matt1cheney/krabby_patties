@@ -6,20 +6,16 @@ const router = express.Router();
 const db = require("../models");
 
 router.get("/", function(req, res) {
-//   db.Burger.findAll({}).then((req, dbBurger) => {
-//     res.json(dbBurger);
-//   });
-  res.render("layouts/main");
-});
-
-router.post("/api/Burger", (req, res) => {
-  db.Burger.create({
-    burger_name: res.body.burger_name,
-    eaten: req.body.eaten
-  }).then((dbBurger) => {
-    res.json(dbBurger);
+  db.Burger.findAll({}).then((dbBurger) => {
+    const handlebarsObj = {
+      burgers: dbBurger.map((burger)=> burger.toJSON())
+    };
+    console.log("get/ ",handlebarsObj);
+    // res.json(handlebarsObj)
+    res.render("index", handlebarsObj);
   });
 });
+
 
 
 // export router

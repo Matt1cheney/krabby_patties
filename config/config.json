@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "Gradybum33!",
-    "database": "krabbyPatty_db",
+    "database": "krabbypatty_db",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false

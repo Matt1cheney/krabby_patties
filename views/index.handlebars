@@ -20,7 +20,7 @@
 
       </div>
 
-      <a class="waves-effect waves-light btn"><i class="burgerBtn fas fa-hamburger material-icons left"></i>add to
+      <a class="burgerBtn waves-effect waves-light btn"><i class=" fas fa-hamburger material-icons left"></i>add to
         menu!</a>
 
     </form>
@@ -29,9 +29,9 @@
 
     <div class="col s12 m5 l5 toBeEaten">
       <ul>
-        {{#each burgerReq}}
-          {{#unless eaten}}
-            {{> cats/eatery eaten=false}}
+        {{#each burgers}}
+          {{#unless this.eaten}}
+            {{> eatery/eatery-block makeEaten=false}}
           {{/unless}}
         {{/each}}
       </ul>
@@ -39,9 +39,9 @@
 
     <div class="col s12 m5 l5 eaten right">
       <ul>
-  {{#each burgerReq}}
-    {{#if eaten}}
-      {{> cats/eatery eaten=true}}
+  {{#each burgers}}
+    {{#if this.eaten}}
+      {{> eatery/eatery-block makeEaten=true}}
     {{/if}}
   {{/each}}
 </ul>
@@ -51,3 +51,4 @@
   </div>
 
 </div>
+<script src="./js/view.js"></script>

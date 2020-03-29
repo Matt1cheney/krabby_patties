@@ -6,11 +6,11 @@ const router = express.Router();
 const db = require("../models");
 
 router.put("/api/Burger/:id", (req, res) => {
-  console.log("condition", id);
+  console.log("condition", req.params.id);
 
   db.Burger.update(
     {
-      eaten: req.params.update
+      eaten: true
     },
     {
       where: {
@@ -30,10 +30,10 @@ router.post("/api/Burger", (req, res) => {
   });
 });
 
-router.delete("api/Burder/:id", ({ id }, res) => {
+router.delete("api/Burder/:id", (req, res) => {
   db.Burger.destroy({
     where: {
-      id: id
+      id: req.params.id
     }
   }).then(() => {
     res.status(200).end();

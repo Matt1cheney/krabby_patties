@@ -3,15 +3,18 @@ $(document).ready(() => {
 
 
   $(".change-eaten").on("click", function(event) {
-    let burgerEaten = {
-      eaten: $(this).attr("data-burgerEaten")
-    };
+    let burgerEaten = $(this).attr("data-burgerEaten")
     let id = $(this).attr("data-id");
+
+    let burgerMoved = {
+      eaten: burgerEaten
+    }
+    
     $.ajax(`/api/burger/${id}`, {
       type: "PUT",
-      data: burgerEaten
+      data: burgerMoved
     }).then(() => {
-      console.log("this burger was eaten", burgerEaten);
+      console.log("this burger was eaten", burgerMoved);
 
       location.reload();
     });
@@ -35,7 +38,7 @@ console.log(newBurgerReq)
   $(".delete-burger").on("click", function(event) {
     let id = $(this).attr("data-id");
     $.ajax( {
-      method: "DELETE",
+      type: "DELETE",
       url: `/api/Burger/${id}`
     }).then(function() {
       console.log("we will not proceed with the order..", id);

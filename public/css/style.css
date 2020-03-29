@@ -1,21 +1,55 @@
 .title {
+  font-family: 'Indie Flower', cursive;
+  font-size: 7vh;
+  font-weight: bold;
+  color: rgb(8, 6, 136);
+}
+body {
+  width:100%;
+  height: auto;
+  background-position: center;
+  background-image: url("Bottle_Burglars_001.webp");
   
+}
+input[placeholder]{
+  font-family: 'Permanent Marker', cursive;
+  font-size: 2.5vh;
+}
+#burgerReq {
+  color: rgb(201, 199, 238);
+  background-color: rgb(15, 1, 95);
+  border: solid;
+  border-color: black;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 2.5vh;
 }
 
 .toBeEaten {
-  border-style:solid;
+
   border: solid;
   border-color: black;
   height: 60vh;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 2.5vh;
+  color: black;
 
 }
 .eaten {
-  border-style:solid;
+
   border: solid;
   border-color: black;
   height: 60vh;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 2.5vh;
+  color:black;
+  
 
 }
 .fa-hamburger {
   font-size: 5vh;
+}
+
+.change-eaten {
+  height: 5vh;
+  
 }

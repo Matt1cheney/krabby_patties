@@ -1,10 +1,10 @@
 <li>
 	{{burger_name}}
 
-	<button class="change-eaten" data-id="{{id}}" data-burgerEaten="{{makeEaten}}">
+	<button class="change-eaten waves-effect waves-light btn delete-burger" data-id="{{id}}" data-burgerEaten="{{makeEaten}}">
 		{{#if eaten}}EATEN!{{else}}eat me!{{/if}}
 
-	</button>
+	<i class="fas fa-hamburger material-icons left"></i></button>
 
-	<button class="delete-burger" data-id="{{id}}">DELETE!</button>
+	<button class="waves-effect waves-light btn delete-burger" data-id="{{id}}"><i class="fas fa-hamburger material-icons left"></i>DELETE!</button>
 </li>

@@ -3,7 +3,7 @@ $(document).ready(() => {
 
   $(".change-eaten").on("click", function(event) {
     let burgerEaten = $(this).attr("data-burgerEaten");
-    let id = $(this).attr("data-id1");
+    let id = $(this).attr("data-id");
 
     let burgerMoved = {
       eaten: burgerEaten

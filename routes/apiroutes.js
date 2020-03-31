@@ -21,6 +21,7 @@ router.put("/api/Burger/:id", (req, res) => {
     return res.status(200).end();
   });
 });
+
 router.delete("/api/burger/:id", (req, res) => {
   console.log("here")
   db.Burger.destroy({

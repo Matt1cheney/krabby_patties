@@ -21,6 +21,16 @@ router.put("/api/Burger/:id", (req, res) => {
     return res.status(200).end();
   });
 });
+router.delete("/api/burger/:id", (req, res) => {
+  console.log("here")
+  db.Burger.destroy({
+    where: {
+      id: req.params.id
+    }
+  }).then(() => {
+  return res.status(200).end();
+  });
+});
 
 router.post("/api/Burger", (req, res) => {
   db.Burger.create({
@@ -30,14 +40,5 @@ router.post("/api/Burger", (req, res) => {
   });
 });
 
-router.delete("api/Burder/:id", (req, res) => {
-  db.Burger.destroy({
-    where: {
-      id: req.params.id
-    }
-  }).then(() => {
-    res.status(200).end();
-  });
-});
 
 module.exports = router;

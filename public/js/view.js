@@ -1,15 +1,14 @@
 $(document).ready(() => {
   // creating a reference to burger input.
 
-
   $(".change-eaten").on("click", function(event) {
-    let burgerEaten = $(this).attr("data-burgerEaten")
+    let burgerEaten = $(this).attr("data-burgerEaten");
     let id = $(this).attr("data-id");
 
     let burgerMoved = {
       eaten: burgerEaten
-    }
-    
+    };
+
     $.ajax(`/api/burger/${id}`, {
       type: "PUT",
       data: burgerMoved
@@ -22,9 +21,11 @@ $(document).ready(() => {
 
   $(".burgerBtn").on("click", (event) => {
     const newBurgerReq = {
-      burger_name: $("#burgerReq").val().trim(),
+      burger_name: $("#burgerReq")
+        .val()
+        .trim()
     };
-console.log(newBurgerReq)
+    console.log(newBurgerReq);
     $.ajax("/api/burger", {
       type: "POST",
       data: newBurgerReq
@@ -37,11 +38,12 @@ console.log(newBurgerReq)
 
   $(".delete-burger").on("click", function(event) {
     let id = $(this).attr("data-id");
-    $.ajax( {
+    $.ajax({
       type: "DELETE",
-      url: `/api/Burger/${id}`
+      url: `/api/burger/${id}`
     }).then(function() {
       console.log("we will not proceed with the order..", id);
+      location.reload();
     });
   });
 });

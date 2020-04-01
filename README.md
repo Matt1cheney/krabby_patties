@@ -9,6 +9,9 @@
 [![NPM](https://nodei.co/npm/mysql2.png?mini=true)](https://nodei.co/npm/mysql2/)
 
   [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript\.svg)](https://forthebadge.com)
+
+
+  ## live site: [Krusty Krab](https://krusty-krab-pattymaker.herokuapp.com/)
   
 # Krusty Krab Patty Maker!.
 #### Matthew Cheney
